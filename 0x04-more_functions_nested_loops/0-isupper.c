@@ -10,5 +10,5 @@
 
 int _isupper(int c)
 {
-README.md return (c >= 'A' && c <= 'Z');
+return (c >= 'A' && c <= 'Z');
 }
