@@ -1,15 +1,14 @@
 #include "holberton.h"
 
 /**
- * mul - int mul(int a, int b)
- * @a: first input value
- * @b: second input value
+ * _isdigit - 1 if c is a digit
+ * @c: input value
  *
- * Description: multiplies two integers
+ * Description: checks for a digit (0 through 9).
  * Return: Always (0).
  */
 
-int _isdigit(int a, int b)
+int _isdigit(int c)
 {
 return (c >= '0' && c <= '9');
 }
