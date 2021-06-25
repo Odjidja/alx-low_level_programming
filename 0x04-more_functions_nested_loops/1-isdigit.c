@@ -9,7 +9,7 @@
  * Return: Always (0).
  */
 
-int mul(int a, int b)
+int _isdigit(int a, int b)
 {
-return (a * b);
+  return (c >= '0' && c <= '9');
 }
