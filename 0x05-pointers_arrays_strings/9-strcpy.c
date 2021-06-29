@@ -17,7 +17,7 @@ odjidja = 0;
 
 while (src[odjidja] != '\0')
 {
-odjdija++;
+odjidja++;
 }
 
 for (f = 0; f < odjidja; f++)
