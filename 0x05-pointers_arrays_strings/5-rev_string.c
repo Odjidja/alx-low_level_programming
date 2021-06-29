@@ -4,7 +4,6 @@
  * rev_string - reverses a string
  * @s: string to be reversed
  */
-
 void rev_string(char *s)
 {
 char tmp;
@@ -20,10 +19,10 @@ odjidja++;
 
 tetteh = odjidja - 1;
 
-for (i = 0; i < odjidja / 2; i++)
+for (f = 0; f < odjidja / 2; f++)
 {
-tmp = s[i];
-s[i] = s[tetteh];
+tmp = s[f];
+s[f] = s[tetteh];
 s[tetteh--] = tmp;
 }
 }
