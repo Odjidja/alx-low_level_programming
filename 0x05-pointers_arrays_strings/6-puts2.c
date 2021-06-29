@@ -16,7 +16,7 @@ while (str[odjidja] != '\0')
 odjidja++;
 }
 
-for (f = 0; f < len; f += 2)
+for (f = 0; f < odjidja; f += 2)
 {
 _putchar(str[f]);
 }
