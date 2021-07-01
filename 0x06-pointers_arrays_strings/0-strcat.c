@@ -13,7 +13,7 @@ int i, j;
 
 i = j = 0;
 while (*(dest + i))
-++;
+i++;
 while ((*(dest + i) = *(src + j)))
 {
 i++;
