@@ -1,18 +1,30 @@
 #include "holberton.h"
 
 /**
- * _strcmp - compares two strings
- * @s1: first string
- * @s2: second string
+ * _strncpy - copies a string
+ * @dest: destination string
+ * @src: source string
+ * @n: number of bytes to copy
  *
- * Return: outputs the difference of s1 and s2
+ * Return: pointer to the resulting string
  */
-
-int _strcmp(char *s1, char *s2)
+char *_strncpy(char *dest, char *src, int n)
 {
-int i = 0;
+int i;
 
-while (*(s1 + i) && *(s2 + i) && (*(s1 + i) == *(s2 + i)))
+i = 0;
+
+while (src[i] != '\0' && i < n)
+{
+dest[i] = src[i];
 i++;
-return (*(s1 + i) - *(s2 + i));
+}
+
+while (i < n)
+{
+dest[i] = '\0';
+i++;
+}
+
+return (dest);
 }
