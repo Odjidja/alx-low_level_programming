@@ -2,16 +2,50 @@
 #include <stdio.h>
 
 /**
-* main - check the code for ALX School students.
-*
-* Return: Always 0.
-*/
-int main(void)
+ * print_buffer - Prints a buffer
+ * @b: char
+ * @size: int
+ * Return:void
+ */
+void print_buffer(char *b, int size)
 {
-char buffer[] = "This is a string!\0And this is the rest of the #buffer :)\1\2\3\4\5\6\7#cisfun\n\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x20\x21\x34\x56#pointersarefun #infernumisfun\n";
+int x, i;
 
-printf("%s\n", buffer);
-printf("---------------------------------\n");
-print_buffer(buffer, sizeof(buffer));
-return (0);
+for (x = 0; x < size; x += 10)
+{
+printf("%08x: ", x);
+
+for (i = 0; i < 10; i++)
+{
+if ((i + x) >= size)
+printf("  ");
+
+else
+printf("%02x", *(b + i + x));
+
+if ((i % 2) != 0 && i != 0)
+printf(" ");
+}
+
+for (i = 0; i < 10; i++)
+		{
+if ((i + x) >= size)
+break;
+
+else if (*(b + i + x) >= 31 &&
+*(b + i + x) <= 126)
+printf("%c", *(b + i + x));
+
+else
+printf(".");
+}
+
+if (x >= size)
+continue;
+
+printf("\n");
+}
+
+if (size <= 0)
+printf("\n");
 }
