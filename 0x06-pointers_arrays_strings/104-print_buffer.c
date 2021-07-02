@@ -2,29 +2,16 @@
 #include <stdio.h>
 
 /**
- * print_buffer - prints a buffer
- * @b: buffer to be printed
- * @size: size of buffer to be printed
- *
- * Return: void
- */
-void print_buffer(char *b, int size)
+* main - check the code for ALX School students.
+*
+* Return: Always 0.
+*/
+int main(void)
 {
-int i;
+char buffer[] = "This is a string!\0And this is the rest of the #buffer :)\1\2\3\4\5\6\7#cisfun\n\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x20\x21\x34\x56#pointersarefun #infernumisfun\n";
 
-for (i = 0; i <= (size - 1) / 10 && size; i++)
-{
-printf("%08x: ", i * 10);
-if (i < size / 10)
-{
-print_line(b, 9, i);
-}
-else
-{
-print_line(b, size % 10 - 1, i);
-}
-putchar('\n');
-}
-if (size == 0)
-putchar('\n');
+printf("%s\n", buffer);
+printf("---------------------------------\n");
+print_buffer(buffer, sizeof(buffer));
+return (0);
 }
