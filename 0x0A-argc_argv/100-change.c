@@ -7,7 +7,6 @@
  * @n: target change value
  * Return: min num of coins
  */
-
 int returnCents(int n)
 {
 int coins = 0;
@@ -36,7 +35,6 @@ return (coins);
  * @argv: argument vector
  * Return: 0 if no errors
  */
-
 int main(int argc, char **argv)
 {
 int number;
@@ -53,3 +51,5 @@ printf("0\n");
 return (0);
 }
 printf("%i\n", returnCents(number));
+return (0);
+}
