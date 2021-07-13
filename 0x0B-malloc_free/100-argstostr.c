@@ -1,51 +1,51 @@
-#include <stdio.h>
 #include "holberton.h"
+#include <stdlib.h>
 
 /**
-* _strlen - returns the length of a string
-* @s: string s
-* Return: length of string
-*/
-int _strlen(char *s)
-{
-int len = 0;
-while (*s++)
-len++;
-return (len);
-}
-
-/**
-* argstostr - concatenates all the arguments of your program
-* @ac: argument count
-* @av: argument vector
-* Return: concatenated string
-*/
-
+ * argstostr - concatenates all the arguments of a program.
+ * @ac: argument count.
+ * @av: argument vector.
+ *
+ * Return: pointer of an array of char
+ */
 char *argstostr(int ac, char **av)
 {
-int i, j, len, total;
-int m = 0;
-char *ptr;
-if (!ac || !av)
+char *aout;
+int c, i, j, ia;
+
+if (ac == 0)
 return (NULL);
-total = 0;
-for (i = 0; i < ac; i++)
+
+for (c = i = 0; i < ac; i++)
 {
-len = _strlen(av[i]) + 1;
-total += len;
-}
-ptr = malloc(sizeof(char) * total + 1);
-if (!ptr)
+if (av[i] == NULL)
 return (NULL);
-for (i = 0; i < ac; i++)
-{
-len = _strlen(av[i]);
-for (j = 0; j < len; j++, m++)
-{
-ptr[m] = av[i][j];
+
+for (j = 0; av[i][j] != '\0'; j++)
+c++;
+c++;
 }
-ptr[m++] = '\n';
+
+aout = malloc((c + 1) * sizeof(char));
+
+if (aout == NULL)
+{
+free(aout);
+return (NULL);
 }
-ptr[m] = '\0';
-return (ptr);
+
+for (i = j = ia = 0; ia < c; j++, ia++)
+{
+if (av[i][j] == '\0')
+{
+aout[ia] = '\n';
+i++;
+ia++;
+j = 0;
+}
+if (ia < c - 1)
+aout[ia] = av[i][j];
+}
+aout[ia] = '\0';
+return (aout);
 }
