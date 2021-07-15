@@ -17,5 +17,6 @@ char *_memset(char *s, char b, unsigned int n);
 char *_memcpy(char *dest, char *src, unsigned int n);
 int onlyNumbers(char *c);
 void multiply(char* s1, char* s2);
+int is_digit(char *s);
 
 #endif /* HOLBERTON_H */
