@@ -19,7 +19,7 @@ i += 1;
 /*+1 to include the terminating character in size.*/
 i++;
 
-dup = malloc(i * sizeof(*dup));
+dup = malloc(i *sizeof(*dup));
 if (dup == NULL)
 return (NULL);
 while (j < i)
