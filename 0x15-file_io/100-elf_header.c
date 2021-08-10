@@ -64,7 +64,6 @@ printf("  Class:                             ELF64\n");
  * @header: pointer to the ELF header struct
  * Return: void
  */
-
 void check_data_ver(Elf64_Ehdr *header)
 {
 if (header->e_ident[EI_DATA] == ELFDATA2LSB)
@@ -109,7 +108,6 @@ printf("  Type:                              Unknown type\n");
  * @header: pointer to the ELF header struct
  * Return: void
  */
-
 void check_entry(Elf64_Ehdr *header)
 {
 if (header->e_entry)
